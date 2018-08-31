@@ -8,6 +8,7 @@ eureka:
     register-with-eureka: false
     
 ---
+# To run this profile from eclipse-runconfig pass this parameter: -Dspring.profiles.active=eurekaone
   
 spring:
   profiles: eurekaone
