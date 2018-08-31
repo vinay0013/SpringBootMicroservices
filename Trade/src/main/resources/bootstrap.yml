@@ -1,0 +1,54 @@
+spring:
+  application:
+     name: trade-service     
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}    
+    
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:5007/eureka 
+      
+server:
+  port: 0 
+  
+logging:
+  level: 
+    httpclient.wire: DEBUG 
+    
+pivotal:
+  registerservice:
+    name: register-service
+  tradeservice:
+    name: trade-service    
+    
+#spring:
+#  application:
+#     name: trade-service     
+#
+#eureka:
+#  instance:
+#    hostname: ${vcap.application.uris[0]}
+#    
+#  client:
+#    serviceUrl:
+#      defaultZone: ${vcap.services.eureka0013.credentials.eurekaurl1} 
+#      
+##server:
+##  port: 0 
+#  
+#logging:
+#    level: 
+#      httpclient.wire: DEBUG 
+#      
+#pivotal:
+#    registerservice:
+#      name: register-service
+#    tradeservice:
+#      name: trade-service    
+
+  
+ 
+ 
+  

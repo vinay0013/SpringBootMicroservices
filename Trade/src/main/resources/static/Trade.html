@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert new title here</title>
+</head>
+<body>
+<table border='1'>
+	<tr><th>TICKER</th><th>PRICE</th></tr>
+	<tr><td>WIPRO</td><td>298.45</td></tr>
+	<tr><td>INFY</td><td>949.95</td></tr>
+	<tr><td>TCS</td><td>2713.70</td></tr>
+	<tr><td>TECHM</td><td>485.85</td></tr>
+	
+</table>
+	<form name="trade" action="trade/do" method="POST">
+		<h1>Stock Trading</h1>
+		<table border='1'>
+		<tr><td>Ticker:</td><td><input type="text" name="ticker" id="ticker"/></td></tr>
+		<tr><td>Quantity:</td><td><input type="number" name="qty" id="qty" min="10" max="100" step="10" /></td></tr>
+		<tr><td><input type="submit" name="submit" value="submit"/></td></tr>
+		</table>
+	</form>
+</body>
+</html>

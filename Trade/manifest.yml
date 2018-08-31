@@ -1,0 +1,13 @@
+---
+applications:
+- name: trade-service
+  memory: 1GB
+  path: target/Trade-0.0.1-SNAPSHOT.jar
+  disk_quota: 1024M
+  instances: 1
+  no-route: false
+  routes:
+  - route: trade-service-pcf.cfapps.io/
+  timeout: 80
+  services:
+  - eureka0013
