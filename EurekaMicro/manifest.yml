@@ -1,0 +1,16 @@
+---
+applications:
+- name: eurekapcftwo
+  memory: 1GB
+  path: target/EurekaMicro-0.0.1-SNAPSHOT.jar
+  disk_quota: 1024M
+  instances: 1
+  no-route: false
+  routes:
+  - route: eureka-server-pcftwo.cfapps.io/
+  timeout: 80
+  env:
+    spring.profiles.active: eurekapcftwo
+  services:
+  - eureka
+  
