@@ -1,0 +1,42 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:5007/eureka
+    
+zuul:
+  routes:
+    register:
+      path: /register/**
+      serviceId: REGISTER-SERVICE
+    trade:
+      path: /tradeservice/**
+      serviceId: TRADE-SERVICE
+      
+---
+  
+spring:
+  profiles: zuulpcf
+  cloud:
+    services:
+      registrationMethod: route
+
+  security:
+    basic:
+      enabled: false
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${vcap.services.eureka.credentials.url1}
+    
+zuul:
+  routes:
+    register:
+      path: /register/**
+      serviceId: REGISTER-SERVICE
+    trade:
+      path: /tradeservice/**
+      serviceId: TRADE-SERVICE
